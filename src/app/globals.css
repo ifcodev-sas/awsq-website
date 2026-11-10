@@ -1,0 +1,606 @@
+/* ==========================================================================
+   AWSQ (Advanced Web Software & Quality) - Global Styles
+   ========================================================================== */
+
+:root {
+  --awsq-bg: #0b0f19;
+  --awsq-bg-secondary: #111827;
+  --awsq-card-bg: rgba(17, 24, 39, 0.75);
+  --awsq-card-border: rgba(255, 255, 255, 0.08);
+  --awsq-card-hover: rgba(255, 255, 255, 0.16);
+  --awsq-orange: #ec7211;
+  --awsq-orange-light: #ff9900;
+  --awsq-orange-glow: rgba(236, 114, 17, 0.25);
+  --awsq-blue: #0073bb;
+  --awsq-text-primary: #f9fafb;
+  --awsq-text-secondary: #9ca3af;
+  --awsq-text-muted: #6b7280;
+  --awsq-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--awsq-bg);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(236, 114, 17, 0.14) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(0, 115, 187, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(255, 153, 0, 0.08) 0%, transparent 35%);
+  color: var(--awsq-text-primary);
+  font-family: var(--awsq-font);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.awsq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header & Navigation */
+.awsq-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(14px);
+  background: rgba(11, 15, 25, 0.85);
+  border-bottom: 1px solid var(--awsq-card-border);
+}
+
+.awsq-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.awsq-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--awsq-text-primary);
+}
+
+.awsq-logo-badge {
+  background: linear-gradient(135deg, #ec7211, #ff9900);
+  color: #0b0f19;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 6px 11px;
+  border-radius: 6px;
+  box-shadow: 0 0 16px var(--awsq-orange-glow);
+}
+
+.awsq-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.awsq-brand-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.awsq-brand-sub {
+  font-size: 11px;
+  color: var(--awsq-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.awsq-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.awsq-nav-link {
+  color: var(--awsq-text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.awsq-nav-link:hover {
+  color: var(--awsq-text-primary);
+}
+
+.awsq-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.awsq-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.awsq-btn-primary {
+  background: linear-gradient(135deg, var(--awsq-orange), var(--awsq-orange-light));
+  color: #0b0f19;
+  box-shadow: 0 4px 14px var(--awsq-orange-glow);
+}
+
+.awsq-btn-primary:hover {
+  background: linear-gradient(135deg, #d86407, #ec7211);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--awsq-orange-glow);
+}
+
+.awsq-btn-outline {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--awsq-text-primary);
+  border: 1px solid var(--awsq-card-border);
+}
+
+.awsq-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--awsq-card-hover);
+}
+
+/* Hero Section */
+.awsq-hero {
+  padding: 90px 0 60px;
+  text-align: center;
+  position: relative;
+}
+
+.awsq-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(236, 114, 17, 0.12);
+  border: 1px solid rgba(236, 114, 17, 0.3);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--awsq-orange-light);
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.awsq-hero-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  background: linear-gradient(180deg, #ffffff 40%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.awsq-hero-lead {
+  font-size: 18px;
+  color: var(--awsq-text-secondary);
+  max-width: 760px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+.awsq-hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+/* Stats Ribbon */
+.awsq-stats-ribbon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 28px;
+  background: var(--awsq-card-bg);
+  border: 1px solid var(--awsq-card-border);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 90px;
+}
+
+.awsq-stat-item {
+  text-align: center;
+}
+
+.awsq-stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--awsq-orange-light);
+  margin-bottom: 4px;
+}
+
+.awsq-stat-label {
+  font-size: 13px;
+  color: var(--awsq-text-secondary);
+  font-weight: 500;
+}
+
+/* Section Header */
+.awsq-section-header {
+  text-align: center;
+  margin-bottom: 54px;
+}
+
+.awsq-section-tag {
+  color: var(--awsq-orange-light);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.awsq-section-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 14px;
+  color: var(--awsq-text-primary);
+}
+
+.awsq-section-desc {
+  font-size: 16px;
+  color: var(--awsq-text-secondary);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Services Grid */
+.awsq-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 90px;
+}
+
+.awsq-service-card {
+  background: var(--awsq-card-bg);
+  border: 1px solid var(--awsq-card-border);
+  border-radius: 14px;
+  padding: 32px;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.awsq-service-card:hover {
+  border-color: var(--awsq-card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.awsq-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(236, 114, 17, 0.12);
+  border: 1px solid rgba(236, 114, 17, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.awsq-service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--awsq-text-primary);
+}
+
+.awsq-service-card p {
+  font-size: 14px;
+  color: var(--awsq-text-secondary);
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+.awsq-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.awsq-feature-item {
+  font-size: 13px;
+  color: var(--awsq-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.awsq-check {
+  color: var(--awsq-orange-light);
+  font-weight: bold;
+}
+
+/* Pricing Grid */
+.awsq-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 90px;
+}
+
+.awsq-pricing-card {
+  background: var(--awsq-card-bg);
+  border: 1px solid var(--awsq-card-border);
+  border-radius: 14px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.awsq-pricing-card.popular {
+  border-color: var(--awsq-orange);
+  box-shadow: 0 0 30px var(--awsq-orange-glow);
+}
+
+.awsq-popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--awsq-orange), var(--awsq-orange-light));
+  color: #0b0f19;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.awsq-plan-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.awsq-plan-desc {
+  font-size: 13px;
+  color: var(--awsq-text-secondary);
+  margin: 0 0 24px;
+  min-height: 38px;
+}
+
+.awsq-plan-price {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--awsq-text-primary);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.awsq-plan-currency {
+  font-size: 14px;
+  color: var(--awsq-text-muted);
+  font-weight: 500;
+}
+
+.awsq-plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Identity & Trust Banner (Required for dLocal Go) */
+.awsq-trust-banner {
+  background: linear-gradient(135deg, rgba(236, 114, 17, 0.08), rgba(0, 115, 187, 0.08));
+  border: 1px solid rgba(236, 114, 17, 0.25);
+  border-radius: 14px;
+  padding: 36px;
+  margin-bottom: 90px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.awsq-trust-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.awsq-trust-desc {
+  font-size: 14px;
+  color: var(--awsq-text-secondary);
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.awsq-trust-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.awsq-meta-item {
+  background: rgba(11, 15, 25, 0.6);
+  border: 1px solid var(--awsq-card-border);
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.awsq-meta-label {
+  font-size: 11px;
+  color: var(--awsq-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.awsq-meta-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--awsq-text-primary);
+  word-break: break-all;
+}
+
+/* Legal Pages Container */
+.awsq-legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.awsq-legal-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--awsq-card-border);
+  padding-bottom: 24px;
+}
+
+.awsq-legal-title {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.awsq-legal-updated {
+  font-size: 13px;
+  color: var(--awsq-text-muted);
+}
+
+.awsq-legal-content {
+  background: var(--awsq-card-bg);
+  border: 1px solid var(--awsq-card-border);
+  border-radius: 12px;
+  padding: 40px;
+  color: #d1d5db;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.awsq-legal-content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--awsq-text-primary);
+  margin: 32px 0 12px;
+  border-left: 3px solid var(--awsq-orange);
+  padding-left: 12px;
+}
+
+.awsq-legal-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--awsq-text-primary);
+  margin: 20px 0 8px;
+}
+
+.awsq-legal-content p {
+  margin: 0 0 16px;
+}
+
+.awsq-legal-content ul {
+  padding-left: 24px;
+  margin: 0 0 16px;
+}
+
+.awsq-legal-content li {
+  margin-bottom: 6px;
+}
+
+/* Footer */
+.awsq-footer {
+  background: rgba(7, 10, 18, 0.95);
+  border-top: 1px solid var(--awsq-card-border);
+  padding: 60px 0 30px;
+}
+
+.awsq-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.awsq-footer-col h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--awsq-text-primary);
+  margin: 0 0 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.awsq-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.awsq-footer-link {
+  font-size: 13px;
+  color: var(--awsq-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.awsq-footer-link:hover {
+  color: var(--awsq-orange-light);
+}
+
+.awsq-footer-bottom {
+  border-top: 1px solid var(--awsq-card-border);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--awsq-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .awsq-hero-title { font-size: 34px; }
+  .awsq-stats-ribbon { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .awsq-services-grid { grid-template-columns: 1fr; }
+  .awsq-pricing-grid { grid-template-columns: 1fr; }
+  .awsq-trust-banner { grid-template-columns: 1fr; }
+  .awsq-footer-grid { grid-template-columns: 1fr 1fr; }
+  .awsq-nav-links { display: none; }
+}
